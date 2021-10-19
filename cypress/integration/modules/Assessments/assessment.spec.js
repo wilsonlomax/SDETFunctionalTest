@@ -1,4 +1,4 @@
-<reference types="cypress" />
+/// <reference types="cypress" />
 
 const username = 'taylor@wilsonlomax.com';
 const password = 'Otu$SDET123'
@@ -13,8 +13,13 @@ before(() => {
 })
 
 it('Login Successful', () => {
-  cy.find('.user-profile__user-name').should('equal', 'Taylor');
-})
+  cy.get('.title-row > p').should('contain', 'Home');
+});
+
+it('Access Assessment Page', () => {
+  cy.get('.navcollection ul li').contains('Assessments').click();
+  cy.get('.title-row > p').should('contain', 'Assessments');
+});
 
 });
 
