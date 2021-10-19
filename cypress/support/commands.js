@@ -29,5 +29,4 @@ Cypress.Commands.add('login', (email,password) => {
     cy.get('.login-form__section1__email').type(email);
     cy.get('.login-form__section1__password').type(password);
     cy.get('.btn-login').click();
-    cy.wait();
 })
