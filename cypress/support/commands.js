@@ -26,6 +26,8 @@
 
 Cypress.Commands.add('login', (email,password) => {
     cy.visit('https://my.otus.com');
-    cy.find('[placeholder]="email"').type(email);
-    cy.find('[placeholder]="password"').type(password);
+    cy.get('.login-form__section1__email').type(email);
+    cy.get('.login-form__section1__password').type(password);
+    cy.get('.btn-login').click();
+    cy.wait(1000);
 })
