@@ -12,13 +12,9 @@ before(() => {
 
 })
 
-it('Login Successful', () => {
-  cy.get('.title-row > p').should('contain', 'Home');
-});
+it('Access Assessment Page', () => {  
 
-it('Access Assessment Page', () => {
-  cy.get('.navcollection ul li').contains('Assessments').click();
-  cy.get('.title-row > p').should('contain', 'Assessments');
+  
 });
 
 });
