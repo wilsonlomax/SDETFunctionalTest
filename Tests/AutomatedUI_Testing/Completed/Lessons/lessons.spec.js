@@ -3,7 +3,7 @@
 const username = 'taylor@wilsonlomax.com';
 const password = 'Otu$SDET123';
 
-describe('Accessing Assessment Screen', () => {
+describe('Lesson Test Scripts', () => {
   
   before(() => {
     cy.login(username, password);
@@ -16,7 +16,7 @@ describe('Accessing Assessment Screen', () => {
 
   });
 
-  it('7 Assignments for User Found, Links to Assignment, Completed Status', () => {
+  it('7 Assignments for User Found, Links to Assignment Visible, Completed Status', () => {
     
     cy.get('.ot-lesson-card-header').should('have.length', 7);
     cy.get('.ot-lesson-card-header').first().should('be.visible').as('assignment');
@@ -27,7 +27,7 @@ describe('Accessing Assessment Screen', () => {
   
   });
 
-  it('Completed Label Found when Assignment Card Opened and Assignment not Complete', () => {
+  it('Complete Label Found when Assignment Card Opened and Assignment not Complete', () => {
     cy.get('.ot-lesson-card-header').last().click();
     cy.get('.ot-checkbox__label').contains('Complete');
     cy.get('button[aria-label="Close"]').click();
