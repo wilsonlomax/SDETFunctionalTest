@@ -1,11 +1,27 @@
 const jsonData = pm.response.json();
 
+const schema = {
+    "students": [
+			{
+				"first": "string",
+				"last": "string",
+				"email": "string",
+				"studentClasses": []
+}],
+    "classes": {
+        "type": "string"
+}};
+
 pm.test("Status code is 200", () => {
     pm.response.to.have.status(200);
 });
 
 pm.test("Response is JSON", () => {
     pm.expect(pm.response.headers.get('Content-Type')).to.contain('application/json');
+});
+
+pm.test('Expected Schema Found', () => {
+    pm.response.to.have.jsonSchema(schema);
 });
 
 pm.test("Returns List of Students", () => {
@@ -26,7 +42,7 @@ pm.test("Returns Correct Values for a Given Student", () => {
 
 })
 
-pm.test("Returns List of Classes and Grade for a Given Student", () => {
+pm.test("Returns List of Classes for a Given Student", () => {
 
         jsonData.students.forEach((student) => {
             student.studentClasses.forEach((course) => {
