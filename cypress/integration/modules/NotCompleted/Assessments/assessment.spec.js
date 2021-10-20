@@ -17,8 +17,8 @@ it('Open Assignment from Assessment Page', () => {
   cy.wait(2000);
   cy.get(':nth-child(1) > .ot-assess-list-row__title').click();
   cy.get('.ot-retake-assessment-modal__button-container > .ng-star-inserted').click();
-  cy.url().should('includ', 'student-review');
-  
+  cy.url().should('include', 'student-review');
+
 });
 
 });
