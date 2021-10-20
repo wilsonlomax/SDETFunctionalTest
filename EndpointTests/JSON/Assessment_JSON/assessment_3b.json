@@ -1,0 +1,16 @@
+{
+  "lesson": [
+      {
+          "lesson_id": 412,
+          "lesson_title": "Lesson 412",
+          "assignment": {
+              "assignment_id": 201,
+              "assignment_title": "Assignment 201",
+              "course": {
+                  "course_id": 30223,
+                  "course_title": "Course 30223"
+              }
+          }
+      }
+  ]
+}
